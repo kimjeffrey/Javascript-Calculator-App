@@ -25,7 +25,9 @@ operationButtons.forEach(button => {
 })
 
 submit.addEventListener('click', () => {
-    if(previousInput.innerText !== null && currentInput.innerText !== null){
+    if(currentInput.innerText === null || currentInput.innerText === ""){
+      return;
+    } else if(previousInput.innerText !== null && previousInput !== ""){
       calculator.currentValue = currentInput.innerText;
       calculate();
     }
