@@ -25,7 +25,7 @@ operationButtons.forEach(button => {
 })
 
 submit.addEventListener('click', () => {
-    if(currentInput.innerText === null || currentInput.innerText === ""){
+    if(currentInput.innerText === null || currentInput.innerText === "" || currentInput.innerText === "."){
       return;
     } else if(previousInput.innerText !== null && previousInput !== ""){
       calculator.currentValue = currentInput.innerText;
@@ -55,6 +55,8 @@ const appendNumber = (number) => {
 
 const chooseOperation = (operation) => {
   if(currentInput.innerText === "" && previousInput.innerText === ""){
+    return;
+  } else if(currentInput.innerText === "."){
     return;
   } else if(calculator.operator === null){
     calculator.previousValue = currentInput.innerText;
